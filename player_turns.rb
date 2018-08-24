@@ -21,10 +21,7 @@ class PlayerTurns
   end
 
   def board_message
-    #if count < 2 do
       puts "Enter 'B' At Any Time To View Game Board"
-    #end
-    #count += 1
   end
 
   def turn_with_message(player)
@@ -36,8 +33,6 @@ class PlayerTurns
     rules = Rules.new
     player.move_prompt
     response = gets.chomp
-    # puts "here is your response! #{response}"
-    # puts "here is the type of your response! #{response.class}"
     if !rules.valid?(response)
       puts "#{response} is an invalid entry.".red
       single_turn(player)
