@@ -2,11 +2,11 @@ require_relative 'colorize'
 
 class Player
 
-  attr_accessor :number, :icon
+  attr_accessor :number, :icon, :color
 
-  def initialize(number, icon)
+  def initialize(number, icon, color)
     self.number = number
-    self.icon = icon
+    self.icon = icon.method(color).call
   end
 
   def move_prompt

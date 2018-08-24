@@ -33,9 +33,6 @@ class Board
     make_group(7,8,9)
   end
 
-
-
-
   def color_array
     ['green','pink'].sample
   end
@@ -45,7 +42,7 @@ class Board
   end
 
   def row_format(args)
-    "#{args[0]} | #{args[1]} | #{args[2]}"
+    " #{args[0]} | #{args[1]} | #{args[2]}"
   end
 
   def make_group(first, second, third)
@@ -53,23 +50,16 @@ class Board
   end
 
   def change_board(key, new_value)
-    # @board_values.keys.each { |key| puts "THIS KEY IS A #{key.class}"}
-    puts "here is the key you are passing in: #{key}, which is a #{key.class}"
-    puts "here is the new value: #{new_value}"
-    puts "here is the board before the changes"
-    puts @board_values
     @board_values[key] = new_value
-    puts "here is the board after the changes"
-    puts @board_values
   end
 
-  # puts "#{colored_icon} | #{colored_icon} | #{colored_icon}\n_________\n#{colored_icon} | #{colored_icon} | #{colored_icon}\n_________\n#{colored_icon} | #{colored_icon} | #{colored_icon}"
-
   def show_board
+    puts
     puts row_format(top_row)
-    puts "_________"
+    puts "___________"
     puts row_format(middle_row)
-    puts "_________"
+    puts "___________"
     puts row_format(bottom_row)
+    puts
   end
 end
