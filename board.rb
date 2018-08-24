@@ -55,7 +55,6 @@ class Board
 
   def cell_filled?(key)
     if @board_values.fetch(key).include?('X') || @board_values.fetch(key).include?('O')
-      puts "it is TRUE!!!!"
       true
     else
       false

@@ -33,15 +33,11 @@ class PlayerTurns
     rules = Rules.new
     player.move_prompt
     response = gets.chomp
-    if !rules.valid?(response)
-      puts "#{response} is an invalid entry.".red
-      single_turn(player)
-    end
 
     if rules.b?(response)
       board.show_board
       single_turn(player)
-    else rules.valid_number?(response)
+    elsif rules.valid_number?(response)
       if board.cell_filled?(response.to_i)
         puts "That space is taken already.".red
         single_turn(player)
@@ -49,6 +45,9 @@ class PlayerTurns
         board.change_board(response.to_i, player.icon)
         board.show_board
       end
+    else #if !rules.valid?(response)
+      puts "#{response} is an invalid entry.".red
+      single_turn(player)
     end
   end
 

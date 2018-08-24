@@ -9,7 +9,9 @@ class Rules
   end
 
   def valid_number?(item)
-    if item.ord > 48 && item.ord < 58
+    if item.length > 1
+      false
+    elsif item.length == 1 && item.ord > 48 && item.ord < 58
       true
     else
       false
