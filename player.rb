@@ -10,7 +10,7 @@ class Player
   end
 
   def move_prompt
-    puts "Player#{@number} please enter a number 1-9: "
+    print "Player#{@number} please enter a number 1-9: "
   end
 
 end

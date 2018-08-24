@@ -53,6 +53,15 @@ class Board
     @board_values[key] = new_value
   end
 
+  def cell_filled?(key)
+    if @board_values.fetch(key).include?('X') || @board_values.fetch(key).include?('O')
+      puts "it is TRUE!!!!"
+      true
+    else
+      false
+    end
+  end
+
   def show_board
     puts
     puts row_format(top_row)
