@@ -1,10 +1,12 @@
 
-
-* can't place icon in a filled cell
-
+* player specific message stating who won
 
 
 DONE
 
 * Validate response
 * show board functionality stops after 2 turns
+* can't place icon in a filled cell
+* do a board check once after every turn, just log something
+* check if 3 cells in a row are filled and log something if so
+* end the game if somebody wins

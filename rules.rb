@@ -1,6 +1,6 @@
 class Rules
 
-  def b?(item)
+  def self.b?(item)
       if item.casecmp?('b')
         true
       else
@@ -8,7 +8,7 @@ class Rules
       end
   end
 
-  def valid_number?(item)
+  def self.valid_number?(item)
     if item.length > 1
       false
     elsif item.length == 1 && item.ord > 48 && item.ord < 58
@@ -18,20 +18,23 @@ class Rules
     end
   end
 
-  def valid?(item)
-    if b?(item) || valid_number?(item)
+  def self.game_over?(group)
+    if all_same_icon?(group, "X")
+      puts "Player 1 WINS!"
+      true
+    elsif all_same_icon?(group, "O")
+      puts "Player 2 WINS!"
       true
     else
       false
     end
   end
 
-  def can_move?
-    if self.casecmp?('X') || self.casecmp?('O')
-      false
-    else
+  def self.all_same_icon?(arr, icon)
+    if arr.all? { |item| item.include? icon }
       true
+    else
+      false
     end
   end
-
 end
