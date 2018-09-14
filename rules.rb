@@ -1,5 +1,3 @@
-require 'io/console'
-
 class Rules
 
   def self.b?(item)
