@@ -1,5 +1,4 @@
 class String
-  #this will allow me to have colored output on the command line
   def colorize(color_code)
     "\e[#{color_code}m#{self}\e[0m"
   end

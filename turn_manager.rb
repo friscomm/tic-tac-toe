@@ -1,13 +1,14 @@
 require_relative 'rules'
 
-class Turns
+class TurnManager
 
-  attr_accessor  :p1, :p2, :board
+  attr_accessor  :p1, :p2, :board, :active
 
-  def initialize(p1, p2, board)
+  def initialize(p1, p2, board, active)
     self.p1 = p1
     self.p2 = p2
     self.board = board
+    self.active = active
   end
 
   def next_turn(turn_number)
@@ -45,24 +46,31 @@ class Turns
 
   def continue_game?
     if Rules.game_over?(board.top_row)
+      @active = false
       false
     elsif Rules.game_over?(board.middle_row)
+      @active = false
       false
     elsif Rules.game_over?(board.bottom_row)
+      @active = false
       false
     elsif Rules.game_over?(board.left_column)
+      @active = false
       false
     elsif Rules.game_over?(board.middle_column)
+      @active = false
       false
     elsif Rules.game_over?(board.right_column)
+      @active = false
       false
     elsif Rules.game_over?(board.cross_section_a)
+      @active = false
       false
     elsif Rules.game_over?(board.cross_section_b)
+      @active = false
       false
     else
       true
     end
   end
-
 end
